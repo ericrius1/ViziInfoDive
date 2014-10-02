@@ -1,0 +1,24 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+  <div id = "container"></div>
+
+  <script src = "lib/vizi.js"></script>
+  <script src = "lib/jquery.js"></script>
+  <script src = "js/infoworld.js"></script>
+  <script>
+    $(document).ready(function(){
+
+      var container  = document.getElementById('container');
+      var infoworld = new InfoWorld({
+        container: container
+      });
+      infoworld.run();
+    })
+  </script
+
+</body>
+
+</html>
