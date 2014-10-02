@@ -5,9 +5,11 @@ ArcPrefab = function(param) {
 
   var arcScript = new ArcScript();
   obj.addComponent(arcScript);
+
+  return obj
 }
 
-ArcScript = function(){
+ArcScript = function(param){
   PrimitiveScript.call(this, param);
 }
 

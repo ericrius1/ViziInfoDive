@@ -1,20 +1,34 @@
-goog.provide('PrimitiveScript');
+PrimitivesPrefab = function(param) {
+  param = param || {};
+
+  var obj = new Vizi.Object;
+
+  var primitivesScript = new PrimitivesScript(param);
+  obj.addComponent(primitivesScript);
+
+  return obj;
+}
+
+goog.provide('PrimitivesScript');
 goog.require('Vizi.Script');
 
-PrimitiveScript = function(param) {
+PrimitivesScript = function(param) {
   Vizi.Script.call(this, param);
 }
 
-goog.inherits(PrimitiveScript, Vizi.Script);
+goog.inherits(PrimitivesScript, Vizi.Script);
 
-PrimitiveScript.prototype.realize = function(){
+PrimitivesScript.prototype.realize = function(){
   this.primitives = [];
   this.activePrimitiveIndex = 0;
   this._object.addChild(ArcPrefab());
 }
 
+PrimitivesScript.prototype.spawn = function(){
+  console.log('spawn');
+}
 
-PrimitiveScript.prototype.update = function(){
+PrimitivesScript.prototype.update = function(){
 
 }
 

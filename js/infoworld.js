@@ -45,6 +45,11 @@ InfoWorld.prototype.init = function(param) {
 
   this.addObject(ground)
   this.addObject(light);
+
+  var primitives = PrimitivesPrefab();
+  this.addObject(primitives);
+  this.primitives = primitives.getComponent(PrimitivesScript);
+
 }
 
 InfoWorld.prototype.onKeyDown = function(event){
@@ -56,4 +61,14 @@ InfoWorld.prototype.onKeyDown = function(event){
       console.log('curve dots')
       break;
   }
+}
+
+InfoWorld.prototype.onMouseDown = function(event){
+  if (event.button === 0) {
+    this.spawn();
+  }
+}
+
+InfoWorld.prototype.spawn = function(){
+  this.primitives.spawn();
 }
