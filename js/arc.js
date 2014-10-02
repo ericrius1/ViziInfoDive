@@ -24,7 +24,7 @@ ArcScript.prototype.spawn = function() {
     uniforms: {
       color: {
         type: 'c',
-        value: new THREE.Color(0xff00ff)
+        value: new THREE.Color(_.sample(this._colorPalette))
       }
     },
     attributes: {
