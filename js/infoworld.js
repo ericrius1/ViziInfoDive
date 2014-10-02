@@ -1,8 +1,14 @@
 InfoWorld = function(param) {
   // param.tabstop = true;
   Vizi.Application.call(this, param);
+  this.shaders = new ShaderLoader('shaders');
+  this.shaders.load('vs-strand', 'strand', 'vertex');
+  this.shaders.load('fs-strand', 'strand', 'fragment');
+  this.shaders.shaderSetLoaded = function(){
+    this.init(param);
+  }.bind(this);
+  //Vizi.Application.instance
 
-  this.init(param);
 }
 
 goog.inherits(InfoWorld, Vizi.Application);
