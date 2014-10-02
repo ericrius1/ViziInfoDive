@@ -22,10 +22,18 @@ PrimitivesScript.prototype.realize = function(){
   this.primitives = [];
   this.activePrimitiveIndex = 0;
   this._object.addChild(ArcPrefab());
+
+  var len = this._object._children.length;
+  for(var i = 0; i < len; i++){
+    var obj = this._object._children[i];
+    var primitive = obj.getComponent(PrimitiveScript);
+    this.primitives.push(primitive);
+  }
 }
 
 PrimitivesScript.prototype.spawn = function(){
   console.log('spawn');
+  this.primitives[this.activePrimitiveIndex].spawn();
 }
 
 PrimitivesScript.prototype.update = function(){

@@ -20,14 +20,14 @@ ArcScript.prototype.realize = function(){
 }
 
 ArcScript.prototype.spawn = function(){
-  var cube = Vizi.object;
+  console.log('arc spawn');
+  var cube = new Vizi.Object();
 
   var visual = new Vizi.Visual({
     geometry: new THREE.CubeGeometry(10, 10, 10),
     material: new THREE.MeshBasicMaterial()
   });
   cube.addComponent(visual);
+  cube.transform.position.z = -50
   this._object.addChild(cube);
-
-
 }
