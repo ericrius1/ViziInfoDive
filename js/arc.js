@@ -1,6 +1,8 @@
 ArcPrefab = function(param) {
   param = param || {};
 
+  this.$menuItem =  $('<div>').addClass('item').text("1 : ArcCloner").appendTo($('#menu'));
+
   var obj = new Vizi.Object;
 
   var arcScript = new ArcScript();
@@ -77,7 +79,7 @@ ArcScript.prototype.spawn = function() {
 
     setTimeout(function() {
       growStrand(strand, vertexIndex);
-    }, 30)
+    }, 100)
 
   }
 }

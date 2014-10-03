@@ -20,8 +20,9 @@ goog.inherits(PrimitivesScript, Vizi.Script);
 
 PrimitivesScript.prototype.realize = function(){
   this.primitives = [];
-  this.activePrimitiveIndex = 0;
+  this.activePrimitiveIndex = 1;
   this._object.addChild(ArcPrefab());
+  this._object.addChild(CurveDotPrefab());
 
   var len = this._object._children.length;
   for(var i = 0; i < len; i++){
