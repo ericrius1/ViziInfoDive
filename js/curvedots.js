@@ -1,7 +1,6 @@
 CurveDotPrefab = function(param) {
   param = param || {};
 
-  this.$menuItem =  $('<div>').addClass('item').text("2 : Curve Dots").appendTo($('#menu'));
 
   var obj = new Vizi.Object;
 
@@ -21,6 +20,7 @@ CurveDotScript = function(param) {
 goog.inherits(CurveDotScript, PrimitiveScript);
 
 CurveDotScript.prototype.realize = function() {
+  this.$menuItem =  $('<div>').addClass('item').text("2 : Curve Dots").appendTo($('#menu'));
 
 }
 

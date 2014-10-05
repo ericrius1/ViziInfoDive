@@ -55,18 +55,23 @@ InfoWorld.prototype.init = function(param) {
   var primitives = PrimitivesPrefab();
   this.addObject(primitives);
   this.primitives = primitives.getComponent(PrimitivesScript);
+  document.addEventListener('keydown', this.onKeyDown.bind(this))
 
 }
 
 InfoWorld.prototype.onKeyDown = function(event){
+  $('.item').removeClass('active');
   switch( event.keyCode ) {
     case 49:
       console.log('arc')
+      this.primitives.activePrimitiveIndex = 0;
       break;
     case 50:
       console.log('curve dots')
+      this.primitives.activePrimitiveIndex = 1;
       break;
   }
+  $(this.primitives.primitives[this.primitives.activePrimitiveIndex].$menuItem).addClass('active');
 }
 
 InfoWorld.prototype.onMouseDown = function(event){

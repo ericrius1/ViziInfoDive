@@ -1,7 +1,6 @@
 ArcPrefab = function(param) {
   param = param || {};
 
-  this.$menuItem =  $('<div>').addClass('item').text("1 : ArcCloner").appendTo($('#menu'));
 
   var obj = new Vizi.Object;
 
@@ -18,6 +17,7 @@ ArcScript = function(param) {
 goog.inherits(ArcScript, PrimitiveScript);
 
 ArcScript.prototype.realize = function() {
+  this.$menuItem =  $('<div>').addClass('item').text("1 : ArcCloner").appendTo($('#menu'));
 
 }
 
